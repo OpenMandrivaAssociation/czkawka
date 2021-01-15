@@ -95,7 +95,10 @@ Documentation of Czkawka
 %cargo_prep
 
 %build
-%cargo_build
+#cargo_build
+
+cargo build --release --bin czkawka_gui
+cargo build --release --bin czkawka_cli
 
 %install
 #cargo_install
