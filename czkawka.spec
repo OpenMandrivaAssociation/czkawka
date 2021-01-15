@@ -8,20 +8,16 @@
 %global cliapp cli
 
 Name:           rust-%{pkgname}
-Version:        1.0.0
+Version:        2.2.0
 Release:        1%{?dist}
 Summary:        Multi functional app to find duplicates, empty folders etc.
 
 # Upstream license specification: MIT
 License:        MIT
 URL:            https://github.com/qarmin/czkawka
-Source:         _service
-Source1:	vendor.tar.xz
-
-ExclusiveArch:  %{rust_arches}
+Source0:        https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  rust-packaging
-BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(atk)
@@ -30,13 +26,9 @@ BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-3.0) >= 3.22
 BuildRequires: hicolor-icon-theme
+
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
-%if 0%{?suse_version}
-BuildRequires: update-desktop-files
-%endif
-%if 0%{?fedora} || 0%{?rhel_version} || 0%{?centos_version}
-BuildRequires: glibc-all-langpacks
-%endif
+
 
 %global srcroot %{_sourcedir}/%{pkgname}-%{version}
 
@@ -95,8 +87,7 @@ Documentation of Czkawka
 
 %prep
 %autosetup -n %{srcroot} -D -T -p1
-tar -xf %{SOURCE1} -C %{_builddir}
-%define cargo_registry %{_builddir}/vendor
+
 %cargo_prep
 
 %build
