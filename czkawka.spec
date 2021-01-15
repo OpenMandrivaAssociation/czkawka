@@ -9,7 +9,7 @@
 
 Name:           czkawka
 Version:        2.2.0
-Release:        1%{?dist}
+Release:        1
 Summary:        Multi functional app to find duplicates, empty folders etc.
 
 # Upstream license specification: MIT
@@ -90,7 +90,7 @@ Documentation of Czkawka
 %doc Changelog.md
 
 %prep
-%autosetup -n %{name}-%{version} -D -T -p1
+%autosetup -p1
 
 %cargo_prep
 
