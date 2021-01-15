@@ -18,6 +18,10 @@ URL:            https://github.com/qarmin/czkawka
 Source0:        https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  rust-packaging
+BuildRequires:  rust
+BuildRequires:  rust-src
+BuildRequires:  cargo
+BuildRequires:	cargo-c
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(atk)
@@ -86,7 +90,7 @@ Documentation of Czkawka
 %doc Changelog.md
 
 %prep
-%autosetup -n %{srcroot} -D -T -p1
+%autosetup -n %{name}-%{version} -D -T -p1
 
 %cargo_prep
 
