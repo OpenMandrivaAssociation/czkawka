@@ -7,7 +7,7 @@
 %global orbapp orbtk
 %global cliapp cli
 
-Name:           rust-%{pkgname}
+Name:           czkawka
 Version:        2.2.0
 Release:        1%{?dist}
 Summary:        Multi functional app to find duplicates, empty folders etc.
