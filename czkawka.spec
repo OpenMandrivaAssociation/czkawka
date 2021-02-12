@@ -8,7 +8,7 @@
 %global cliapp cli
 
 Name:           czkawka
-Version:        2.2.0
+Version:        2.3.2
 Release:        1
 Summary:        Multi functional app to find duplicates, empty folders etc.
 
