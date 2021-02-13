@@ -63,9 +63,9 @@ GTK frontent of Czkawka
 %files       -n %{pkgname}-%{guiapp}
 %license LICENSE
 %{_bindir}/%{pkgname}_%{guiapp}
-%{_datadir}/icons/hicolor/512x512/apps/%{uuid}.png
-%{_datadir}/icons/hicolor/scalable/apps/%{uuid}.svg
-%{_datadir}/applications/%{uuid}.desktop
+#{_datadir}/icons/hicolor/512x512/apps/%{uuid}.png
+#{_datadir}/icons/hicolor/scalable/apps/%{uuid}.svg
+#{_datadir}/applications/%{uuid}.desktop
 
 
 %package     -n %{pkgname}-%{orbapp}
