@@ -88,7 +88,7 @@ Documentation of Czkawka
 %files       -n %{pkgname}-doc
 %license LICENSE
 %doc README.md
-%doc Instruction.md
+#doc Instruction.md
 %doc Changelog.md
 
 %prep
