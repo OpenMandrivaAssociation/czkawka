@@ -25,12 +25,13 @@ BuildRequires:  cargo
 BuildRequires:	cargo-c
 BuildRequires:  pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(alsa)
 BuildRequires:	pkgconfig(atk)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-3.0) >= 3.22
-BuildRequires: hicolor-icon-theme
+BuildRequires:  hicolor-icon-theme
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 
