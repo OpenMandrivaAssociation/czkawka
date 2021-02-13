@@ -53,7 +53,6 @@ CLI frontent of Czkawka
 %{_bindir}/%{pkgname}_%{cliapp}
 %{_bindir}/%{pkgname}
 
-
 %package     -n %{pkgname}-%{guiapp}
 Summary:        GTK frontend of Czkawka
 
@@ -66,7 +65,6 @@ GTK frontent of Czkawka
 #{_datadir}/icons/hicolor/512x512/apps/%{uuid}.png
 #{_datadir}/icons/hicolor/scalable/apps/%{uuid}.svg
 #{_datadir}/applications/%{uuid}.desktop
-
 
 %package     -n %{pkgname}-%{orbapp}
 Summary:        Orbtk frontend of Czkawka
@@ -114,6 +112,11 @@ ln -s %{_bindir}%{pkgname}_%{cliapp} %{buildroot}%{_bindir}/%{pkgname}
 #install -Dm644 ./icon.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/%{uuid}.png
 #install -Dm644 ./icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{uuid}.svg
 #install -Dm644 ./pkgs/%{uuid}.desktop %{buildroot}%{_datadir}/applications/%{uuid}.desktop
+
+install -Dm644 ./data/icons/com.github.qarmin.czkawka.svg -t %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
+install -Dm644 ./pkgs/com.github.qarmin.czkawka.desktop -t %{buildroot}%{_datadir}/applications/
+install -Dm644 ./data/com.github.qarmin.czkawka.metainfo.xml -t %{buildroot}%{_datadir}/metainfo
+
 %if 0%{?suse_version}
 %suse_update_desktop_file -c %{uuid} Czkawka "Multi functional app to clean OS which allow to find duplicates, empty folders, similar files etc." %{pkgname}_%{guiapp} %{uuid} System
 %endif
