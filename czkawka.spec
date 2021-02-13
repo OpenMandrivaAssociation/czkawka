@@ -109,7 +109,7 @@ cargo build --release --bin czkawka_cli
 mkdir -p %{buildroot}%{_bindir}/
 install -Dm755 ./target/release/%{pkgname}_%{cliapp} %{buildroot}%{_bindir}
 install -Dm755 ./target/release/%{pkgname}_%{guiapp} %{buildroot}%{_bindir}
-install -Dm755 ./target/release/%{pkgname}_%{guiapp}_%{orbapp} %{buildroot}%{_bindir}
+#install -Dm755 ./target/release/%{pkgname}_%{guiapp}_%{orbapp} %{buildroot}%{_bindir}
 ln -s %{_bindir}%{pkgname}_%{cliapp} %{buildroot}%{_bindir}/%{pkgname}
 install -Dm644 ./icon.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/%{uuid}.png
 install -Dm644 ./icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{uuid}.svg
