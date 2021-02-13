@@ -76,7 +76,7 @@ Orbtk frontend of Czkawka
 
 %files       -n %{pkgname}-%{orbapp}
 %license LICENSE
-%{_bindir}/%{pkgname}_%{guiapp}_%{orbapp}
+#{_bindir}/%{pkgname}_%{guiapp}_%{orbapp}
 
 %package     -n %{pkgname}-doc
 Summary:        Documentation of Czkawka
