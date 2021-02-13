@@ -91,7 +91,7 @@ Documentation of Czkawka
 %doc Changelog.md
 
 %prep
-%autosetup -D -T -p1
+%autosetup -p1
 tar -xf %{SOURCE1} -C %{_builddir}
 %define cargo_registry %{_builddir}/vendor
 
