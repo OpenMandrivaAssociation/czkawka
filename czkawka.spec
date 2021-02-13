@@ -16,6 +16,7 @@ Summary:        Multi functional app to find duplicates, empty folders etc.
 License:        MIT
 URL:            https://github.com/qarmin/czkawka
 Source0:        https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
+Source1:        vendor.tar.xz
 
 BuildRequires:  rust-packaging
 BuildRequires:  rust
@@ -90,7 +91,9 @@ Documentation of Czkawka
 %doc Changelog.md
 
 %prep
-%autosetup -p1
+%autosetup -D -T -p1
+tar -xf %{SOURCE1} -C %{_builddir}
+%define cargo_registry %{_builddir}/vendor
 
 %cargo_prep
 
