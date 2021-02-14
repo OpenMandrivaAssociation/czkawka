@@ -7,6 +7,17 @@
 %global orbapp orbtk
 %global cliapp cli
 
+# Do not upgrade without testing!
+# Looks like compiling with system provided rust packages is not posible at this time. 
+# Online installation is not possible too due strange errors:
+# "error: no matching package named `audiotags` found
+# location searched: registry `https://github.com/rust-lang/crates.io-index`"
+# For some reason this crates can't be found. So as workaround, we can create own vendor pack.
+# Download czkawka .tar.gz source, unpack it, cd and install 'dnf install cargo-vendor'
+# Then inside czkawka dir (or any other cargo/rust project) run in terminal command: 'cargo vendor'
+# This create new dir called vendor and download here all needed crates dependencies.
+# When process finish, compress it as vendor.tar.xz and upload to file-store. Place here as Source1.
+
 Name:           czkawka
 Version:        2.3.2
 Release:        1
@@ -55,6 +66,7 @@ CLI frontent of Czkawka
 
 %package     -n %{pkgname}-%{guiapp}
 Summary:        GTK frontend of Czkawka
+Provides:    czkawka = %{version}-%{release}
 
 %description -n %{pkgname}-%{guiapp}
 GTK frontent of Czkawka
@@ -102,15 +114,13 @@ cargo build --release --bin czkawka_gui
 cargo build --release --bin czkawka_cli
 
 %install
+# Cargo install is broken. For some reason it not intall any files.
 #cargo_install
 mkdir -p %{buildroot}%{_bindir}/
 install -Dm755 ./target/release/%{pkgname}_%{cliapp} %{buildroot}%{_bindir}
 install -Dm755 ./target/release/%{pkgname}_%{guiapp} %{buildroot}%{_bindir}
-#install -Dm755 ./target/release/%{pkgname}_%{guiapp}_%{orbapp} %{buildroot}%{_bindir}
+
 ln -s %{_bindir}%{pkgname}_%{cliapp} %{buildroot}%{_bindir}/%{pkgname}
-#install -Dm644 ./icon.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/%{uuid}.png
-#install -Dm644 ./icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/%{uuid}.svg
-#install -Dm644 ./pkgs/%{uuid}.desktop %{buildroot}%{_datadir}/applications/%{uuid}.desktop
 
 install -Dm644 ./data/icons/com.github.qarmin.czkawka.svg -t %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
 install -Dm644 ./pkgs/com.github.qarmin.czkawka.desktop -t %{buildroot}%{_datadir}/applications/
