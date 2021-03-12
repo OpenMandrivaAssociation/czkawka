@@ -19,7 +19,7 @@
 # When process finish, compress it as vendor.tar.xz and upload to file-store. Place here as Source1.
 
 Name:           czkawka
-Version:        2.3.2
+Version:        3.0.0
 Release:        1
 Summary:        Multi functional app to find duplicates, empty folders etc.
 
