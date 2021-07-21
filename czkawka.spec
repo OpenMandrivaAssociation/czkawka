@@ -18,34 +18,30 @@
 # This create new dir called vendor and download here all needed crates dependencies.
 # When process finish, compress it as vendor.tar.xz and upload to file-store. Place here as Source1.
 
-Name:           czkawka
-Version:        3.1.0
-Release:        1
-Summary:        Multi functional app to find duplicates, empty folders etc.
-
+Summary:	Multi functional app to find duplicates, empty folders etc.
+Name:		czkawka
+Version:	3.1.0
+Release:	1
 # Upstream license specification: MIT
-License:        MIT
-URL:            https://github.com/qarmin/czkawka
-Source0:        https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
-Source1:        vendor.tar.xz
+License:	MIT
+URL:		https://github.com/qarmin/czkawka
+Source0:	https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
+Source1:	vendor.tar.xz
 
-BuildRequires:  rust-packaging
-BuildRequires:  rust
-BuildRequires:  rust-src
-BuildRequires:  cargo
+BuildRequires:	rust-packaging
+BuildRequires:	rust
+BuildRequires:	rust-src
+BuildRequires:	cargo
 BuildRequires:	cargo-c
-BuildRequires:  pkgconfig(xkbcommon)
+BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(alsa)
+BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(atk)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-3.0) >= 3.22
-BuildRequires:  hicolor-icon-theme
-
-BuildRoot: %{_tmppath}/%{name}-%{version}-build
-
+BuildRequires:	hicolor-icon-theme
 
 %global srcroot %{_sourcedir}/%{pkgname}-%{version}
 
@@ -53,25 +49,25 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-build
 Czkawka is simple, fast and easy to use alternative to Fslint, written in Rust.
 This is my first ever project in Rust so probably a lot of things are not being written in the most optimal way.
 
-%package     -n %{pkgname}-%{cliapp}
-Summary:        CLI frontend of Czkawka
+%package -n %{pkgname}-%{cliapp}
+Summary:	CLI frontend of Czkawka
 
 %description -n %{pkgname}-%{cliapp}
-CLI frontent of Czkawka
+CLI frontent of Czkawka.
 
-%files       -n %{pkgname}-%{cliapp}
+%files -n %{pkgname}-%{cliapp}
 %license LICENSE
 %{_bindir}/%{pkgname}_%{cliapp}
 %{_bindir}/%{pkgname}
 
-%package     -n %{pkgname}-%{guiapp}
-Summary:        GTK frontend of Czkawka
-Provides:    czkawka = %{version}-%{release}
+%package -n %{pkgname}-%{guiapp}
+Summary:	GTK frontend of Czkawka
+Provides:	czkawka = %{version}-%{release}
 
 %description -n %{pkgname}-%{guiapp}
-GTK frontent of Czkawka
+GTK frontent of Czkawka.
 
-%files       -n %{pkgname}-%{guiapp}
+%files -n %{pkgname}-%{guiapp}
 %license LICENSE
 %{_bindir}/%{pkgname}_%{guiapp}
 %{_datadir}/applications/com.github.qarmin.czkawka.desktop
@@ -88,14 +84,14 @@ GTK frontent of Czkawka
 #license LICENSE
 #{_bindir}/%{pkgname}_%{guiapp}_%{orbapp}
 
-%package     -n %{pkgname}-doc
-Summary:        Documentation of Czkawka
-BuildArch:      noarch
+%package -n %{pkgname}-doc
+Summary:	Documentation of Czkawka
+BuildArch:	noarch
 
 %description -n %{pkgname}-doc
-Documentation of Czkawka
+Documentation of Czkawka.
 
-%files       -n %{pkgname}-doc
+%files -n %{pkgname}-doc
 %license LICENSE
 %doc README.md
 %doc Changelog.md
