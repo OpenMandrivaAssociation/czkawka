@@ -21,7 +21,7 @@
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
 Version:	3.2.0
-Release:	1
+Release:	2
 # Upstream license specification: MIT
 License:	MIT
 URL:		https://github.com/qarmin/czkawka
