@@ -20,7 +20,7 @@
 
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
-Version:	3.3.1
+Version:	4.0.0
 Release:	1
 # Upstream license specification: MIT
 License:	MIT
