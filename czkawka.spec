@@ -119,7 +119,7 @@ install -Dm755 ./target/release/%{pkgname}_%{guiapp} %{buildroot}%{_bindir}
 ln -s %{_bindir}%{pkgname}_%{cliapp} %{buildroot}%{_bindir}/%{pkgname}
 
 install -Dm644 ./data/icons/com.github.qarmin.czkawka.svg -t %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
-install -Dm644 ./pkgs/com.github.qarmin.czkawka.desktop -t %{buildroot}%{_datadir}/applications/
+install -Dm644 ./data/com.github.qarmin.czkawka.desktop -t %{buildroot}%{_datadir}/applications/
 install -Dm644 ./data/com.github.qarmin.czkawka.metainfo.xml -t %{buildroot}%{_datadir}/metainfo
 
 %if %{with check}
