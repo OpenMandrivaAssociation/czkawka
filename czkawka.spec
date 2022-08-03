@@ -1,4 +1,4 @@
-%bcond_without check
+%bcond_with check
 %global __cargo_skip_build 0
 
 %global uuid com.github.qarmin.czkawka
