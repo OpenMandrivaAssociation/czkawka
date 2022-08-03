@@ -20,7 +20,7 @@
 
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
-Version:	4.1.0
+Version:	5.0.0
 Release:	1
 # Upstream license specification: MIT
 License:	MIT
@@ -39,6 +39,7 @@ BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(atk)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(pango)
+BuildRequires:  pkgconfig(gtk4)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gdk-3.0) >= 3.22
 BuildRequires:	hicolor-icon-theme
