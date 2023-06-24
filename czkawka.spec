@@ -1,3 +1,5 @@
+%define _empty_manifest_terminate_build 0
+
 %bcond_with check
 %global __cargo_skip_build 0
 
@@ -20,8 +22,8 @@
 
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
-Version:	5.1.0
-Release:	2
+Version:	6.0.0
+Release:	1
 # Upstream license specification: MIT
 License:	MIT
 URL:		https://github.com/qarmin/czkawka
