@@ -23,7 +23,7 @@
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
 Version:	7.0.0
-Release:	1
+Release:	2
 # Upstream license specification: MIT
 License:	MIT
 URL:		https://github.com/qarmin/czkawka
@@ -109,8 +109,7 @@ tar -xf %{SOURCE1} -C %{_builddir}
 %build
 #cargo_build
 
-cargo build --release --bin czkawka_gui
-cargo build --release --bin czkawka_cli
+cargo build --release
 
 %install
 # Cargo install is broken. For some reason it not intall any files.
