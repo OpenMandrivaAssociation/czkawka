@@ -59,7 +59,7 @@ Summary:	CLI frontend of Czkawka
 CLI frontent of Czkawka.
 
 %files -n %{pkgname}-%{cliapp}
-%license LICENSE
+#license LICENSE
 %{_bindir}/%{pkgname}_%{cliapp}
 %{_bindir}/%{pkgname}
 
@@ -71,7 +71,7 @@ Provides:	czkawka = %{version}-%{release}
 GTK frontent of Czkawka.
 
 %files -n %{pkgname}-%{guiapp}
-%license LICENSE
+#license LICENSE
 %{_bindir}/%{pkgname}_%{guiapp}
 %{_datadir}/applications/com.github.qarmin.czkawka.desktop
 %{_iconsdir}/hicolor/scalable/apps/com.github.qarmin.czkawka.svg
@@ -95,7 +95,7 @@ BuildArch:	noarch
 Documentation of Czkawka.
 
 %files -n %{pkgname}-doc
-%license LICENSE
+#license LICENSE
 %doc README.md
 %doc Changelog.md
 
