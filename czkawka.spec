@@ -22,7 +22,7 @@
 
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
-Version:	6.1.0
+Version:	7.0.0
 Release:	1
 # Upstream license specification: MIT
 License:	MIT
@@ -59,7 +59,7 @@ Summary:	CLI frontend of Czkawka
 CLI frontent of Czkawka.
 
 %files -n %{pkgname}-%{cliapp}
-%license LICENSE
+#license LICENSE
 %{_bindir}/%{pkgname}_%{cliapp}
 %{_bindir}/%{pkgname}
 
@@ -71,7 +71,7 @@ Provides:	czkawka = %{version}-%{release}
 GTK frontent of Czkawka.
 
 %files -n %{pkgname}-%{guiapp}
-%license LICENSE
+#license LICENSE
 %{_bindir}/%{pkgname}_%{guiapp}
 %{_datadir}/applications/com.github.qarmin.czkawka.desktop
 %{_iconsdir}/hicolor/scalable/apps/com.github.qarmin.czkawka.svg
@@ -95,7 +95,7 @@ BuildArch:	noarch
 Documentation of Czkawka.
 
 %files -n %{pkgname}-doc
-%license LICENSE
+#license LICENSE
 %doc README.md
 %doc Changelog.md
 
