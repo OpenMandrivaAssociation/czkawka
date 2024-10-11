@@ -81,7 +81,7 @@ GTK frontent of Czkawka.
 Summary:        Krokiet frontend of Czkawka
 
 %description -n %{pkgname}-%{krokapp}
-Orbtk frontend of Czkawka
+Krokiet frontend of Czkawka
 
 %files       -n %{pkgname}-%{krokapp}
 #license LICENSE
