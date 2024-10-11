@@ -6,7 +6,7 @@
 %global uuid com.github.qarmin.czkawka
 %global pkgname czkawka
 %global guiapp gui
-%global orbapp orbtk
+%global krokapp krokiet
 %global cliapp cli
 
 # Do not upgrade without testing!
@@ -22,7 +22,7 @@
 
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
-Version:	7.0.0
+Version:	8.0.0
 Release:	1
 # Upstream license specification: MIT
 License:	MIT
@@ -77,15 +77,15 @@ GTK frontent of Czkawka.
 %{_iconsdir}/hicolor/scalable/apps/com.github.qarmin.czkawka.svg
 %{_datadir}/metainfo/com.github.qarmin.czkawka.metainfo.xml
 
-#package     -n %{pkgname}-%{orbapp}
-#Summary:        Orbtk frontend of Czkawka
+%package     -n %{pkgname}-%{krokapp}
+Summary:        Krokiet frontend of Czkawka
 
-#description -n %{pkgname}-%{orbapp}
-#Orbtk frontend of Czkawka
+%description -n %{pkgname}-%{krokapp}
+Orbtk frontend of Czkawka
 
-#files       -n %{pkgname}-%{orbapp}
+%files       -n %{pkgname}-%{krokapp}
 #license LICENSE
-#{_bindir}/%{pkgname}_%{guiapp}_%{orbapp}
+%{_bindir}/krokiet
 
 %package -n %{pkgname}-doc
 Summary:	Documentation of Czkawka
@@ -111,6 +111,7 @@ tar -xf %{SOURCE1} -C %{_builddir}
 
 cargo build --release --bin czkawka_gui
 cargo build --release --bin czkawka_cli
+cargo build --release --bin krokiet
 
 %install
 # Cargo install is broken. For some reason it not intall any files.
@@ -118,6 +119,7 @@ cargo build --release --bin czkawka_cli
 mkdir -p %{buildroot}%{_bindir}/
 install -Dm755 ./target/release/%{pkgname}_%{cliapp} %{buildroot}%{_bindir}
 install -Dm755 ./target/release/%{pkgname}_%{guiapp} %{buildroot}%{_bindir}
+install -Dm755 ./target/release/krokiet %{buildroot}%{_bindir}
 
 ln -s %{_bindir}%{pkgname}_%{cliapp} %{buildroot}%{_bindir}/%{pkgname}
 
