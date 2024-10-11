@@ -111,6 +111,7 @@ tar -xf %{SOURCE1} -C %{_builddir}
 
 cargo build --release --bin czkawka_gui
 cargo build --release --bin czkawka_cli
+cargo build --release --bin krokiet
 
 %install
 # Cargo install is broken. For some reason it not intall any files.
@@ -118,6 +119,7 @@ cargo build --release --bin czkawka_cli
 mkdir -p %{buildroot}%{_bindir}/
 install -Dm755 ./target/release/%{pkgname}_%{cliapp} %{buildroot}%{_bindir}
 install -Dm755 ./target/release/%{pkgname}_%{guiapp} %{buildroot}%{_bindir}
+install -Dm755 ./target/release/krokiet %{buildroot}%{_bindir}
 
 ln -s %{_bindir}%{pkgname}_%{cliapp} %{buildroot}%{_bindir}/%{pkgname}
 
