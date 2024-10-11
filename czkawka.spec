@@ -6,7 +6,7 @@
 %global uuid com.github.qarmin.czkawka
 %global pkgname czkawka
 %global guiapp gui
-%global orbapp orbtk
+%global krokapp krokiet
 %global cliapp cli
 
 # Do not upgrade without testing!
@@ -77,15 +77,15 @@ GTK frontent of Czkawka.
 %{_iconsdir}/hicolor/scalable/apps/com.github.qarmin.czkawka.svg
 %{_datadir}/metainfo/com.github.qarmin.czkawka.metainfo.xml
 
-#package     -n %{pkgname}-%{orbapp}
-#Summary:        Orbtk frontend of Czkawka
+%package     -n %{pkgname}-%{krokapp}
+Summary:        Krokiet frontend of Czkawka
 
-#description -n %{pkgname}-%{orbapp}
-#Orbtk frontend of Czkawka
+%description -n %{pkgname}-%{krokapp}
+Orbtk frontend of Czkawka
 
-#files       -n %{pkgname}-%{orbapp}
+%files       -n %{pkgname}-%{krokapp}
 #license LICENSE
-#{_bindir}/%{pkgname}_%{guiapp}_%{orbapp}
+%{_bindir}/krokiet
 
 %package -n %{pkgname}-doc
 Summary:	Documentation of Czkawka
