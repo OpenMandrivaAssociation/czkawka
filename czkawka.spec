@@ -29,6 +29,7 @@ License:	MIT
 URL:		https://github.com/qarmin/czkawka
 Source0:	https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	vendor.tar.xz
+Patch0:   krokiet-drop-political-references.patch
 
 BuildRequires:	rust-packaging
 BuildRequires:	rust
