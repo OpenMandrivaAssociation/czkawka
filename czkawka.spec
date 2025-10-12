@@ -22,13 +22,14 @@
 
 Summary:	Multi functional app to find duplicates, empty folders etc.
 Name:		czkawka
-Version:	9.0.0
+Version:	10.0.0
 Release:	1
 # Upstream license specification: MIT
 License:	MIT
 URL:		https://github.com/qarmin/czkawka
 Source0:	https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	vendor.tar.xz
+Patch0:   krokiet-drop-political-references.patch
 
 BuildRequires:	rust-packaging
 BuildRequires:	rust
