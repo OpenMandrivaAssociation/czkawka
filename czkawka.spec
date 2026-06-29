@@ -29,8 +29,7 @@ License:	MIT
 URL:		https://github.com/qarmin/czkawka
 Source0:	https://github.com/qarmin/czkawka/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	vendor.tar.xz
-#FIXME need rebase
-#Patch0:   krokiet-drop-political-references.patch
+Patch0:   krokiet-drop-unwanted-political-references.patch
 
 BuildRequires:	rust-packaging
 BuildRequires:	rust
@@ -88,6 +87,8 @@ Krokiet frontend of Czkawka
 %files       -n %{pkgname}-%{krokapp}
 #license LICENSE
 %{_bindir}/krokiet
+%{_datadir}/applications/io.github.qarmin.krokiet.desktop
+%{_iconsdir}/hicolor/scalable/apps/io.github.qarmin.krokiet.svg
 
 %package -n %{pkgname}-doc
 Summary:	Documentation of Czkawka
@@ -126,7 +127,9 @@ install -Dm755 ./target/release/krokiet %{buildroot}%{_bindir}
 ln -s %{_bindir}%{pkgname}_%{cliapp} %{buildroot}%{_bindir}/%{pkgname}
 
 install -Dm644 ./data/icons/com.github.qarmin.czkawka.svg -t %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
+install -Dm644 ./data/icons/io.github.qarmin.krokiet.svg -t %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
 install -Dm644 ./data/com.github.qarmin.czkawka.desktop -t %{buildroot}%{_datadir}/applications/
+install -Dm644 ./data/io.github.qarmin.krokiet.desktop -t %{buildroot}%{_datadir}/applications/
 install -Dm644 ./data/com.github.qarmin.czkawka.metainfo.xml -t %{buildroot}%{_datadir}/metainfo
 
 %if %{with check}
